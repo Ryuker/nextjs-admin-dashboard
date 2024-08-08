@@ -132,6 +132,12 @@ import {
   </div>
 </div>
 ```
+## Icons using Lucide-React Package
+to install:
+```shell client
+npm i lucide-react
+```
+## Command Component
 
 
 
