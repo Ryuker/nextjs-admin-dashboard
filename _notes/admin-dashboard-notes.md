@@ -24,6 +24,18 @@ npx shadcn-ui@latest add button
   - this folder just has the component as a single file, we can customize it
 
 ## using the component
+- example usage
+``` JS
+import { Button } from "@/components/ui/button";
+
+<Button 
+  variant='destructive' 
+  size='lg'
+  className='text-blue-400'>Click Me</Button>
+```
+
+# 4. Navbar Component
+
 
 
 
