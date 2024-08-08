@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../img/logo.png';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Navbar = () => {
   return ( 
@@ -8,6 +9,11 @@ const Navbar = () => {
       <Link href="/">
         <Image src={logo} alt='Dashboard Logo' width={40} />
       </Link>
+
+      <Avatar>
+        <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+        <AvatarFallback className="text-black">BT</AvatarFallback>
+      </Avatar>
     </div>
   );
 }

@@ -62,6 +62,20 @@ to install
 ```shell client
 npx shadcn-ui@latest add avatar
 ```
+- added avatar imports to `Navbar`
+``` JS
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+```
+- Added avatar rendering into the `Navbar`
+  - we use `AvatarImage` to display the image from a src
+  - we use `AvatarFallback` to display something when the image can't be loaded for some reason.
+``` JS
+<Avatar>
+  <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+  <AvatarFallback className="text-black">BT</AvatarFallback>
+</Avatar>
+```
+
 
 
 
