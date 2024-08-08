@@ -1,5 +1,6 @@
 # Admin Dashboard Notes
-[video](https://www.youtube.com/watch?v=hhudoSMM0yU&t=570s)
+- [video](https://www.youtube.com/watch?v=hhudoSMM0yU&t=570s)
+- [shadcn-ui website](https://ui.shadcn.com/)
 
 # 1. Setup
 ## Creating a new Next app with Tailwind installed
@@ -57,6 +58,10 @@ export default Navbar;
 ```
 
 ## Avatar component
+to install
+```shell client
+npx shadcn-ui@latest add avatar
+```
 
 
 
