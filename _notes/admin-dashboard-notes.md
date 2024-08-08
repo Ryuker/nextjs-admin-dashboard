@@ -138,7 +138,10 @@ to install:
 npm i lucide-react
 ```
 ## Command Component
-
+- to install
+```shell client
+npx shadcn-ui@latest add command
+```
 
 
 
