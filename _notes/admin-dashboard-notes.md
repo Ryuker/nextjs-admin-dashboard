@@ -3,15 +3,27 @@
 
 # 1. Setup
 ## Creating a new Next app with Tailwind installed
-```Terminal client
+```shell client
 npx create-next-app@latest --tailwind
 ```
 
 # 2. Install Shadcn/UI and initialize
-```Terminal client
+```shell client
 npx shadcn-ui@latest init
 ```
 
 - running the above command adds Shadcn/ui but also a components.json file
   - this is for configuration.
+
+# 3. Bringing in a Shadcn component into the app
+```shell
+npx shadcn-ui@latest add button
+```
+- this adds a components folder inside the root folder of the project.
+  - note this is not in the app folder.
+  - this folder just has the component as a single file, we can customize it
+
+## using the component
+
+
 
