@@ -5,3 +5,4 @@
 ``` Terminal client
 npx create-next-app@latest --tailwind
 ```
+
