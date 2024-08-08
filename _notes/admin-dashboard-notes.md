@@ -76,6 +76,44 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 </Avatar>
 ```
 
+## Dropdown component
+- to install
+```shell client
+npx shadcn-ui@latest add dropdown-menu
+```
+- imports:
+```JSX Navbar.tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+```
+- rendering: 
+  - note we move the Avatar into the `DropdownMenuTrigger`
+    - we remove an outline from the trigger with `className="focus:outline-none"`
+```JSX Navbar.tsx
+<DropdownMenu>
+  <DropdownMenuTrigger className="focus:outline-none">
+    <Avatar>
+    <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+    <AvatarFallback className="text-black">BT</AvatarFallback>
+  </Avatar>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
 
 
 
