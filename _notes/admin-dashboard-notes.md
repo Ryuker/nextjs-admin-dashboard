@@ -294,7 +294,7 @@ const DashboardCard = ({ title, count, icon }: DashboardCardProps) => {
 </DashboardCard>
 ```
 
-# 7. PostsList component
+# 7. Posts data
 ## Adding the posts data
 - added folders for `data` and `types` in the `client` folder
 
@@ -493,6 +493,59 @@ const posts: Post[] = [
 ];
 
 export default posts;
+```
+
+# 8. Posts component
+- added `components/posts` folder
+- added `PostsTable.tsx` for the component with some basic skeleton code
+- imported into homepage
+
+## Data Table Component
+- installed from shadcn-ui
+``` shell client
+npx shadcn-ui@latest add table
+```
+
+## PostsTable Props
+``` tsx components/posts/PostsTable.tsx
+interface PostsTableProps {
+  limit?: number;
+  title?: string;
+};
+```
+
+## Rendering the posts
+- we render the table using the below structure
+  - for responsiveness we hide some of the table cells and table heads on smaller screen using
+    `className="hidden md:table-cell text-right"`
+``` tsx components/posts/PostsTable.tsx
+const PostsTable = ({ limit, title}: PostsTableProps) => {
+  return ( 
+    <div className="mt-10">
+      <h3 className="text-2xl mb-4 font-semibold">
+        { title ? title : 'Posts'}
+      </h3>
+      <Table>
+        <TableCaption>A list of recent posts</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Title</TableHead>
+            <TableHead className="hidden md:table-cell">Author</TableHead>
+            <TableHead className="hidden md:table-cell text-right">Date</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          { posts.map( post => (
+            <TableRow key={post.id}>
+              <TableCell>{post.title}</TableCell>
+              <TableCell className="hidden md:table-cell">{post.author}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div> 
+  );
+}
 ```
 
 
