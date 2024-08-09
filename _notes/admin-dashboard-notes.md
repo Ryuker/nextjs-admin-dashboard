@@ -201,7 +201,82 @@ import Link from "next/link";
 </Command>
 ```
 
-left vid at: 33:38
+# 6. Dashboard Cards
+- Added `components/dashboard` folder to house all the dashboard components
+
+## Dashboard Card component
+- installed card component from shadcn-ui
+```shell client
+npx shadcn-ui@latest add card
+```
+- added `components/dashboard/DashboardCard.tsx`
+  - uses `Card` and `CardContent` from the card component
+  - uses an newspaper icon
+``` JSX components/dashboard/DashboardCard.tsx
+import { Card, CardContent } from '@/components/ui/card';
+import { Newspaper } from 'lucide-react';
+
+const DashboardCard = () => {
+  return ( 
+    <Card className="bg-slate-100 dark:bg-slate-800 p-4 pb-0">
+      <CardContent>
+        <h3 className="text-3xl text-center mb-4 font-bold text-slate-500 dark:text-slate-200">Posts</h3>
+        <div className="flex gap-5 justify-center items-center">
+          <Newspaper className="text-slate-500" size={72}/>
+          <h3 className="text-5xl font-semibold text-slate-500 dark:text-slate-200">200</h3>
+        </div>
+      </CardContent>
+    </Card> 
+  );
+}
+ 
+export default DashboardCard;
+```
+
+- imported into homepage
+``` JSX page.tsx
+<div className="flex flex-col md:flex-row justify-between gap-5 mb-5">
+  <DashboardCard></DashboardCard>
+</div>
+``` 
+
+## DashboardCard props for reusability of component
+- added an interface `DashboardCardProps`
+  - for icon we import `LucideIcon` from lucide-react.
+    - this allows us to specify it as ReactElement in the interface | `icon: React.ReactElement<LucideIcon>`
+``` TSX DashboardCard.tsx
+import { LucideIcon } from 'lucide-react';
+
+interface DashboardCardProps {
+  title: string;
+  count: number;
+  icon: React.ReactElement<LucideIcon>
+}
+```
+- Rendered the props
+``` TSX DashboardCard.tsx
+const DashboardCard = ({ title, count, icon }: DashboardCardProps) => {
+  return ( 
+    <Card className="bg-slate-100 dark:bg-slate-800 p-4 pb-0">
+      <CardContent>
+        <h3 className="text-3xl text-center mb-4 font-bold text-slate-500 dark:text-slate-200">{title}</h3>
+        <div className="flex gap-5 justify-center items-center">
+          {icon}
+          <h3 className="text-5xl font-semibold text-slate-500 dark:text-slate-200">{count}</h3>
+        </div>
+      </CardContent>
+    </Card> 
+  );
+}
+```
+- modified render of DashboardCard in the HomePage to specify props
+```tsx page.tsx
+<DashboardCard 
+  title='Posts' count={100} 
+  icon={<Newspaper className="text-slate-500" size={72}/>}>
+</DashboardCard>
+```
+
 
 
 
