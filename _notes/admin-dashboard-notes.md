@@ -574,6 +574,17 @@ install recharts
 npm i recharts
 ```
 
+## AnalyticsItem type
+- added `types/analytics.ts`
+``` ts types/analytics.ts
+export interface AnalyticsItem {
+  name: string;
+  uv: number;   // unique views
+  pv: number;   // page views
+  amt: number;  // amount
+}
+```
+
 
 
 
