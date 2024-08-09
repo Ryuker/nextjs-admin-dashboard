@@ -539,6 +539,7 @@ const PostsTable = ({ limit, title}: PostsTableProps) => {
             <TableRow key={post.id}>
               <TableCell>{post.title}</TableCell>
               <TableCell className="hidden md:table-cell">{post.author}</TableCell>
+              <TableCell className="text-right hidden md:table-cell">{post.date}</TableCell>
             </TableRow>
           ))}
         </TableBody>
