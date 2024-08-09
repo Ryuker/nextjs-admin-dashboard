@@ -556,6 +556,19 @@ const PostsTable = ({ limit, title}: PostsTableProps) => {
 }
 ```
 
+## Implementing limit
+- specified it on component on the homepage as prop
+- added sort code
+  - bit tricky using sort function with a callback and then a simple slice
+``` tsx components/posts/PostsTable.tsx
+// Sort posts in dec order based on date
+const sortedPosts: Post[] = [...posts].sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Filter posts to limit
+const filteredPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
+```
+
+
 
 
 
