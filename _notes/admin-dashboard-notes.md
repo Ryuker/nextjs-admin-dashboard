@@ -277,6 +277,23 @@ const DashboardCard = ({ title, count, icon }: DashboardCardProps) => {
 </DashboardCard>
 ```
 
+# 7. Reusing the component for other cards
+- added Categories, Users and Comments + appropriate icons
+``` tsx page.tsx
+<DashboardCard 
+  title='Categories' count={12} 
+  icon={<Folder className="text-slate-500" size={72}/>}>
+</DashboardCard>
+<DashboardCard 
+  title='Users' count={750} 
+  icon={<User className="text-slate-500" size={72}/>}>
+</DashboardCard>
+<DashboardCard 
+  title='Comments' count={1200} 
+  icon={<MessageCircle className="text-slate-500" size={72}/>}>
+</DashboardCard>
+```
+
 
 
 
