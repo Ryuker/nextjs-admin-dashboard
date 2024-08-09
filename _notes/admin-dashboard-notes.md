@@ -568,6 +568,12 @@ const sortedPosts: Post[] = [...posts].sort((a,b) => new Date(b.date).getTime() 
 const filteredPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
 ```
 
+# 9. Analytics charts using recharts
+install recharts
+``` shell client
+npm i recharts
+```
+
 
 
 
