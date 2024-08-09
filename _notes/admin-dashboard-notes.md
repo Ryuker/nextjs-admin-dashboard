@@ -294,6 +294,30 @@ const DashboardCard = ({ title, count, icon }: DashboardCardProps) => {
 </DashboardCard>
 ```
 
+# 7. PostsList component
+## Adding the posts data
+- added folders for `data` and `types` in the `client` folder
+
+## Types
+- added `types/posts.ts`
+``` ts types/posts.ts
+export interface Post {
+  id: string;
+  title: string;
+  body: string;
+  author: string;
+  date: string;
+  comments: PostComment[];
+}
+
+export interface PostComment {
+  id: string;
+  text: string;
+  username: string;
+}
+```
+
+
 
 
 
