@@ -693,6 +693,9 @@ export default data;
 </Card>
 ```
 
+# 10. Posts page
+left vid at 14:22
+
 
 
 
