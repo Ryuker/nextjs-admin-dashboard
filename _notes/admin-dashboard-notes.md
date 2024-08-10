@@ -704,6 +704,10 @@ export default data;
 - rendered `PostsTable` in PostsPage component
 
 ## Pagination
+install:
+``` shell client
+npx shadcn-ui@latest add pagination
+```
 
 
 
