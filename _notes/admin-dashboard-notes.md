@@ -738,9 +738,46 @@ install:
 ``` shell client
 npx shadcn-ui@latest add pagination
 ```
-- Added `components/posts/PostsPagination.tsx with basic component skeleton
+- Added `components/posts/PostsPagination.tsx` with basic component skeleton
 - imported into `PostsPage` component and rendered
 
+- copied code from the shadcn-ui website
+  - it's just visual, not functional yet since we don't have a backend for the posts yet.
+``` tsx components/posts/PostsPagination.tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
+
+const PostsPagination = () => {
+  return ( 
+    <>
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext href="#" />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+    </> 
+  );
+}
+```
 
 
 
