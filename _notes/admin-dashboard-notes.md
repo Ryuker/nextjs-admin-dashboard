@@ -779,6 +779,9 @@ const PostsPagination = () => {
 }
 ```
 
+# 13. Edit route
+- added `posts/edit/[i]/page.tsx` to setup the route
+
 
 
 
