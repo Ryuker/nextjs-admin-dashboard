@@ -779,9 +779,12 @@ const PostsPagination = () => {
 }
 ```
 
-# 13. Edit route
+# 13. Edit route and page
 - added `posts/edit/[i]/page.tsx` to setup the route
   - `[]` is to indicate the page is dynamically generated
+
+## Form
+- 
 
 
 
