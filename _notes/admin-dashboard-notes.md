@@ -784,7 +784,7 @@ const PostsPagination = () => {
   - `[]` is to indicate the page is dynamically generated
 
 ## Form
-- 
+left vid at 1:20:30
 
 
 
