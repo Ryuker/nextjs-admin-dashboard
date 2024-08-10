@@ -1,5 +1,11 @@
+import PostsTable from "@/components/posts/PostsTable";
+
 const PostsPage = () => {
-  return ( <div>Posts</div> );
+  return ( 
+    <>
+      <PostsTable />
+    </>
+   );
 }
  
 export default PostsPage;

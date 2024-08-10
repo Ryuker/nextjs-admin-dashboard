@@ -700,6 +700,12 @@ export default data;
   so we can go to `localhost:5000/posts` for the route
 - moved the main site code into main
 
+## Render Posts 
+- rendered `PostsTable` in PostsPage component
+
+## Pagination
+
+
 
 
 
