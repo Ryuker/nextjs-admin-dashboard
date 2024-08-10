@@ -694,10 +694,11 @@ export default data;
 ```
 
 # 10. Posts page
-## Adding a categories folder
+## Folder organization
 - added `(main)/posts/page.tsx` inside the app folder
   - note the `()` for the main folder, this is to disclude the folder in the route
   so we can go to `localhost:5000/posts` for the route
+- moved the main site code into main
 
 
 
