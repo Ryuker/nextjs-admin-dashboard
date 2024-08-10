@@ -703,7 +703,37 @@ export default data;
 ## Render Posts 
 - rendered `PostsTable` in PostsPage component
 
-## Pagination
+# 11. Back Button Component
+- added `components/BackButton.tsx`
+- imported icon and link
+- specified props interface and specified props on the component
+- rendered the content
+``` tsx components/BackButton.tsx
+import { ArrowLeftCircle } from 'lucide-react';
+import Link from 'next/link';
+
+interface BackButtonProps {
+  text: string;
+  link: string;
+}
+
+const BackButton = ({ text, link}: BackButtonProps) => {
+  return ( 
+    <Link href={link} className="text-gray-500 hover:underline flex items-center gap-1 font-bold mb-5">
+      <ArrowLeftCircle size={18} /> {text}
+    </Link>
+   );
+}
+ 
+export default BackButton;
+```
+- imported and rendered onto `PostsPage` component
+``` tsx (main)/posts/page.tsx
+ <BackButton text='Go Back' link='/' />
+```
+
+
+# 12. Pagination
 install:
 ``` shell client
 npx shadcn-ui@latest add pagination
