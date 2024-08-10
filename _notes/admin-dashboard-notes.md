@@ -738,6 +738,9 @@ install:
 ``` shell client
 npx shadcn-ui@latest add pagination
 ```
+- Added `components/posts/PostsPagination.tsx with basic component skeleton
+- imported into `PostsPage` component and rendered
+
 
 
 
