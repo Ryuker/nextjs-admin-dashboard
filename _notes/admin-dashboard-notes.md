@@ -791,6 +791,31 @@ npx shadcn-ui@latest add form
 npx shadcn-ui@latest add input
 npx shadcn-ui@latest add textarea
 ```
+- we'll also be using `zod`, this is already installed with Next
+to use: `import * as z from 'zod';`
+
+## imports
+``` tsx posts/edit/page.tsx
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from '@/components/ui/form';
+import { Input } from'@/components/ui/input';
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import posts from '@/data/posts';
+```
+
+
+
+
 
 
 
