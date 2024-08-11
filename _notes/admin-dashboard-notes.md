@@ -784,7 +784,13 @@ const PostsPagination = () => {
   - `[]` is to indicate the page is dynamically generated
 
 ## Form
-left vid at 1:20:30
+- we're using shadcn-ui components for this that use `react-hook-form`
+- install:
+``` shell client
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add textarea
+```
 
 
 
