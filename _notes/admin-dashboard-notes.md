@@ -846,6 +846,13 @@ const EditPage = ({ params }: PostEditPageProps) {
 }
 ```
 
+## Rendering the form
+- added H3 element
+
+left vid at 01:29:00
+
+
+
 
 
 
