@@ -30,10 +30,14 @@ const formSchema = z.object({
   })
 });
 
+interface PostEditPageProps {
+  params: {
+    id: string;
+  }
+}
 
 
-
-const EditPage = () => {
+const EditPage = ({ params }: PostEditPageProps) => {
   return ( 
     <>
       <BackButton text='Back To Posts' link='/posts' />

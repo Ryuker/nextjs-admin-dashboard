@@ -832,6 +832,22 @@ const formSchema = z.object({
 });
 ```
 
+## Props interface
+- added `PostEditPageProps` interface
+``` tsx posts/edit/page.tsx
+interface PostEditPageProps {
+  params: {
+    id: string;
+  }
+}
+
+const EditPage = ({ params }: PostEditPageProps) {
+  // .. component code
+}
+```
+
+
+
 
 
 
