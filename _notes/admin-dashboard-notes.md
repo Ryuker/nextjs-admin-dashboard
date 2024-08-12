@@ -967,6 +967,18 @@ to install:
 ``` shell client
 npx shadcn-ui@latest add toast
 ```
+## usage
+- imported into root layout
+``` tsx (main)/layout.tsx
+import { Toaster } from '@/components/ui/toaster';
+```
+- displayed under body in root layout
+``` tsx (main)/layout.tsx
+<Toaster />
+```
+
+## triggering toast component in edit page
+
 
 
 
