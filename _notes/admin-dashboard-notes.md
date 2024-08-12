@@ -960,6 +960,13 @@ const handleSubmit = (data: z.infer<typeof formSchema>) => {
 
 - `react-hook-form` already provides validation and required field notification so that's nice
 
+# 14. Toast component
+- used to display a small popup in the corner that a post update has been submitted successfully
+
+to install:
+``` shell client
+npx shadcn-ui@latest add toast
+```
 
 
 
