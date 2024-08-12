@@ -952,6 +952,14 @@ const handleSubmit = (data: z.infer<typeof formSchema>) => {
 />
 ```
 
+## Submit button
+- added submit button (very simple)
+``` tsx posts/edit/page.tsx
+<Button className="w-full dark:bg-slate-800 dark:text-white">Update Post</Button>
+```
+
+- `react-hook-form` already provides validation and required field notification so that's nice
+
 
 
 

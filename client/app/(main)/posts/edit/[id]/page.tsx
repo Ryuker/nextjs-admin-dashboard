@@ -138,6 +138,7 @@ const EditPage = ({ params }: PostEditPageProps) => {
                 </FormItem>
               )}
             />
+            <Button className="w-full dark:bg-slate-800 dark:text-white">Update Post</Button>
         </form>
       </Form>
     </>
