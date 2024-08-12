@@ -15,6 +15,7 @@ import { Input } from'@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import posts from '@/data/posts';
+import { useToast } from '@/components/ui/use-toast';
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -38,7 +39,8 @@ interface PostEditPageProps {
 }
 
 
-const EditPage = ({ params }: PostEditPageProps) => {
+const PostEditPage = ({ params }: PostEditPageProps) => {
+  const { toast } = useToast();
   // Get the post that matches the id in the url params
   const post = posts.find(post => post.id === params.id);
   
@@ -54,7 +56,10 @@ const EditPage = ({ params }: PostEditPageProps) => {
   });
   
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    toast({
+      title: 'Post has been updated successfully',
+      description: `Updated by ${post?.author} on ${post?.date}`
+    });
   };
 
 
@@ -145,4 +150,4 @@ const EditPage = ({ params }: PostEditPageProps) => {
   );
 }
  
-export default EditPage;
+export default PostEditPage;

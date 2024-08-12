@@ -978,7 +978,21 @@ import { Toaster } from '@/components/ui/toaster';
 ```
 
 ## triggering toast component in edit page
-
+- imported into component
+``` tsx posts/edit/page.tsx
+import { useToast } from '@/components/ui/use-toast';
+```
+- initialized inside component
+``` tsx posts/edit/page.tsx
+const { toast } = useToast();
+```
+- modified handleSubmit function
+``` tsx posts/edit/page.tsx
+toast({
+  title: 'Post has been updated successfully',
+  description: `Updated by ${post?.author} on ${post?.date}`
+});
+```
 
 
 
