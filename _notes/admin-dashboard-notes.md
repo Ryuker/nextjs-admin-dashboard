@@ -994,6 +994,8 @@ toast({
 });
 ```
 
+# 15. Dark mode support
+
 
 
 
