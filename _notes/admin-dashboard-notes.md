@@ -848,8 +848,14 @@ const EditPage = ({ params }: PostEditPageProps) {
 
 ## Rendering the form
 - added H3 element
+- added Form element with a normal form element nested in it
+``` tsx posts/edit/page.tsx
+<Form {...form}>
+  <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
 
-left vid at 01:29:00
+  </form>
+</Form>
+```
 
 
 

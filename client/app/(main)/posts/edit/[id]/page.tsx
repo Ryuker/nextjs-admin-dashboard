@@ -51,13 +51,22 @@ const EditPage = ({ params }: PostEditPageProps) => {
       author: post?.author || '',
       date: post?.date || ''
     }
-  }); 
+  });
+  
+  const handleSubmit = (data: z.infer<typeof formSchema>) => {
+    console.log(data);
+  };
 
 
   return ( 
     <>
       <BackButton text='Back To Posts' link='/posts' />
       <h3 className="text-2xl mb-4">Edit Post</h3>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
+
+        </form>
+      </Form>
     </>
   );
 }
