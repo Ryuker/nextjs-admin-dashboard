@@ -857,6 +857,103 @@ const EditPage = ({ params }: PostEditPageProps) {
 </Form>
 ```
 
+## Form submit
+``` tsx posts/edit/page.tsx
+const handleSubmit = (data: z.infer<typeof formSchema>) => {
+  console.log(data);
+};
+```
+
+## Rendering Form Fields
+- Added field to edit the form title
+``` tsx posts/edit/page.tsx
+<FormField
+  control={form.control}
+  name="title"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Title</FormLabel>
+      <FormControl>
+        <Input 
+          className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+          focus-visible: ring-offset-0"
+          placeholder='Enter Title' 
+          {...field} 
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+- added form field to edit the body
+``` tsx posts/edit/page.tsx
+<FormField
+  control={form.control}
+  name="body"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Title</FormLabel>
+      <FormControl>
+        <Textarea 
+          className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+          focus-visible: ring-offset-0"
+          placeholder='Enter Title' 
+          {...field} 
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+- added form field to edit the author
+``` tsx posts/edit/page.tsx
+<FormField
+  control={form.control}
+  name="author"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Author</FormLabel>
+      <FormControl>
+        <Input 
+          className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+          focus-visible: ring-offset-0"
+          placeholder='Enter Title' 
+          {...field} 
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+- edit form field to edit the date
+``` tsx posts/edit/page.tsx
+<FormField
+  control={form.control}
+  name="date"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Date</FormLabel>
+      <FormControl>
+        <Input 
+          className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+          focus-visible: ring-offset-0"
+          placeholder='Enter Date' 
+          {...field} 
+        />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+
+
 
 
 
