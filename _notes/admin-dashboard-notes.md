@@ -1044,7 +1044,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function ModeToggle() {
+function ThemeToggler() {
   const { setTheme } = useTheme()
 
   return (
@@ -1070,6 +1070,20 @@ export function ModeToggle() {
     </DropdownMenu>
   )
 }
+
+export default ThemeToggler;
+```
+
+## Adding the toggle button to the Navbar
+- imported into `components/Navbar`
+- added the button and wrapped the DropdownMenu and ThemeToggler into a div
+``` tsx components/navbar.tsx
+<div className="flex items-center">
+  <ThemeToggler></ThemeToggler>
+  <DropdownMenu>
+    {/* ...contents  */}
+  </DropdownMenu>
+</div>
 ```
 
 
