@@ -995,7 +995,12 @@ toast({
 ```
 
 # 15. Dark mode support
-left vid at 01:41:32
+## Install Next themes
+``` shell client
+npm install next-themes
+```
+
+
 
 
 
