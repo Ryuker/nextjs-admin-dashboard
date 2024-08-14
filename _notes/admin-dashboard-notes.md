@@ -999,6 +999,34 @@ toast({
 ``` shell client
 npm install next-themes
 ```
+## ThemeProvider component
+- added `components/providers/ThemeProvider.tsx`
+``` tsx components/ThemeProvider.tsx
+"use client"
+
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { type ThemeProviderProps } from "next-themes/dist/types"
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}
+```
+
+## Wrap layout body content into ThemeProvider
+- imported into root layout component
+``` tsx main/layout.tsx
+import { ThemeProvider } from "@/components/provider/ThemeProvider";
+```
+- wrapped body contents with the ThemeProvider
+``` tsx main/layout.tsx
+<ThemeProvider 
+  attribute='class' 
+  defaultTheme='light' 
+  enableSystem={false} 
+  storageKey='dashboard-theme'>
+  {/* // ... body contents */}
+</ThemeProvider>
+```
 
 
 
