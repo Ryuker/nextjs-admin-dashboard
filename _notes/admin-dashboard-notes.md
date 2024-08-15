@@ -1086,7 +1086,7 @@ export default ThemeToggler;
 </div>
 ```
 
-# 16. Login Page
+# 16. Auth Page
 - we'll use the `tabs` shadcn-ui component for this
 
 ## Adding auth directory
@@ -1171,6 +1171,11 @@ const AuthTabs = () => {
  
 export default AuthTabs;
 ```
+
+## Form components
+- added `auth/LoginForm.tsx` and `RegisterForm.tsx`
+- added basic code for rendering the component
+- imported into `AuthTabs` component and rendered in the return
 
 
 
