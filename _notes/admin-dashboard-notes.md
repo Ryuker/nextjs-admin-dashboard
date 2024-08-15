@@ -1146,6 +1146,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 export default MainLayout;
 ```
 
+## AuthTabs component
+- added `components/auth/AuthTabs.tsx`
+- installed `Tabs` component from Shadcn-ui
+``` shell client
+npx shadcn-ui@latest add tabs
+```
+
 
 
 
