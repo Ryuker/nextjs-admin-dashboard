@@ -1086,7 +1086,67 @@ export default ThemeToggler;
 </div>
 ```
 
-- 
+# 16. Login Page
+- we'll use the `tabs` shadcn-ui component for this
+
+## Adding auth directory
+- added `app/(auth)` for all authentication stuff
+- added `(auth)/layout.tsx` for 
+``` tsx auth/layout.tsx
+const AuthLayout = ({ children }: { children: React.ReactNode}) => {
+  return ( 
+    <div className="h-[100vh] flex items-center justify-center relative">
+      {children}
+    </div>
+  );
+}
+ 
+export default AuthLayout;
+```
+- added `(auth)/auth/page.tsx` to configure route
+- added basic component render code
+
+## folder reorganization
+- moved `layout.tsx` and `page.tsx` of root into main folder
+- moved `favicon` and `globals.css` back into root of app folder
+- modified root layout to render children, removed navbar and sidebar imports
+``` tsx app/layout.tsx
+<ThemeProvider 
+  attribute='class' 
+  defaultTheme='light' 
+  enableSystem={true} 
+  storageKey='dashboard-theme'>
+  {children}
+  <Toaster />
+</ThemeProvider>
+```
+
+- added `(main)/layout.tsx` to contain main layout
+  - sidebar and navbar 
+``` tsx (main)/layout.tsx
+import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+
+const MainLayout = ({ children }: { children: React.ReactNode }) => {
+  return ( 
+    <>
+      <Navbar />
+      <div className="flex">
+        <div className='hidden md:block h-[100vh] w-[300px]'>
+          <Sidebar />
+        </div>
+        <div className="p-5 w-full md:max-w-[1140px]">
+          {children}
+        </div>
+      </div>
+    </>
+   );
+}
+ 
+export default MainLayout;
+```
+
+
 
 
 
