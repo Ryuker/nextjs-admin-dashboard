@@ -1022,7 +1022,7 @@ import { ThemeProvider } from "@/components/provider/ThemeProvider";
 <ThemeProvider 
   attribute='class' 
   defaultTheme='light' 
-  enableSystem={false} 
+  enableSystem={true} 
   storageKey='dashboard-theme'>
   {/* // ... body contents */}
 </ThemeProvider>
@@ -1086,7 +1086,7 @@ export default ThemeToggler;
 </div>
 ```
 
-left vid at: 01:49:07
+- 
 
 
 
