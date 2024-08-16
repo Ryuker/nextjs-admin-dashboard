@@ -1299,7 +1299,101 @@ export default LoginForm;
 ```
 
 ## RegisterForm
-left vid at 02:10:58
+- use the login form code with some changes
+
+``` tsx components/auth/RegisterForm.tsx
+
+const formSchema = z.object({
+  name: z.string().min(1, {
+    message: 'Name is required',
+  }),
+  // ... other schema fields
+  confirmPassword: z.string().min(1, {
+    message: 'Confirm password is required'
+  })
+});
+
+
+const RegisterForm = () => {
+  const router = useRouter();
+
+  // connect zod schema to the form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      // .. other default values
+      confirmPassword: ''
+    }
+  });
+  
+  const handleSubmit = (data: z.infer<typeof formSchema>) => {
+    router.push('/');
+  };
+
+
+  return ( 
+    <Card>
+      <CardHeader>
+        <CardTitle>Register</CardTitle>
+        <CardDescription>
+          Sign up by adding the info below
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        <Form {...form}>
+          <form 
+            onSubmit={form.handleSubmit(handleSubmit)} 
+            className="space-y-6">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Name</FormLabel>
+                    <FormControl>
+                      <Input 
+                        className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+                        focus-visible: ring-offset-0"
+                        placeholder='Enter Name' 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* other form fields */}
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>Confirm Password</FormLabel>
+                    <FormControl>
+                      <Input type="password"
+                        className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black  dark:text-white
+                        focus-visible: ring-offset-0"
+                        placeholder='Enter confirm password' 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button className="w-full">Register</Button>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
+  );
+}
+ 
+export default RegisterForm;
+```
+
+
 
 
 
