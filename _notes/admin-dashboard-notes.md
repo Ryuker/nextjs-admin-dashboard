@@ -1393,7 +1393,13 @@ const RegisterForm = () => {
 export default RegisterForm;
 ```
 
-
+## Theme Toggler
+- added `ThemeToggler` to `auth/layout.tsx`
+``` tsx auth/layout.tsx
+<div className="absolute bottom-5 right-0 text-white">
+  <ThemeToggler />
+</div>
+```
 
 
 
